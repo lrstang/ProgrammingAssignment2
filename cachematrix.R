@@ -25,16 +25,17 @@ makeCacheMatrix <- function(x = matrix()) {
 
 #######################################################################################################################################
 ## The cacheSolve() computes the inverse of a square invertable matrix.
-## The function requires at least two arguments:
+## The function expects one argument:
 ## x: a makeCacheMatrix function object
-## ...: optional parameters to the solve function
+## Optional arguments:
+## ...: variable # of parameters to the solve function
 #######################################################################################################################################
 
 cacheSolve <- function(x, ...) {
       ## Return a matrix that is the inverse of 'x'
       i <- x$getInverse()
       
-      ## if cached object available, generate message and return cached matrix
+      ## if cached matrix object available, generate message and return cached matrix object
       if(!is.null(i)) {
             message("getting cached inverse matrix data")
             return(i)
